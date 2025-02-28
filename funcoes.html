@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções</title>
+</head>
+<body>
+    <script>
+        let variavel; //declaração de variável
+    
+        variavel = "Estou com sono "; //inicialização de variavel:
+                                    //primeira atribuição
+        //document.write(variavel);
+        escreverln(variavel)
+        variavel = "e com muita fome."; //nova atribuição
+
+        //document.write(variavel);
+        //pularLinha();
+        escreverln(variavel);
+
+        const constante = 1; //declaração E uma inicialização
+        //document.write(constante);
+
+        escreverln(constante)
+
+        //constante = 2; //nova atribuição
+        //document.write(constante);
+
+        function escrever(frase){ //parâmetro é uma variável declarada nos
+                                  //parênteses de uma função
+            document.write(frase);
+        }
+        //pularLinha();
+        escreverln(frase = "Preciso ir pra casa. "); //neste caso o valor "preciso ir.."
+                                                   //argumento. quando você indica o
+                                                   //nome do parâmentro, no caso,
+                                                   //frase = "etc..." isso se chama
+                                                   //agumento nomeado
+        //pularLinha();
+
+        escreverln(frase = "Sextou. ");
+
+        //pularLinha();
+
+        escreverln(frase = "Amanhã é sábado.");
+        //pularLinha();
+
+        function pularLinha(){
+            document.write("<br>");
+        }
+        function escreverln(frase){ //escopo de variável é o lugar 
+                                   //em que uma variável existe
+            escrever(frase);
+            pularLinha();
+
+        }
+        escreverln("Amanhã não tem aula.");
+        escreverln("Vou me acabar de assistir série.");
+        //D.R.Y. Don't Repeat Yourself
+        //K.I.S.S Keep It Simple, Stupid!
+
+        let ano = 2025;
+
+        escreverln("Eu nasci em: " + (ano - 17));
+
+        //let anoDeNascimento;
+        function calcularNascimento(anoAtual, idade){
+            //anoDeNascimento = anoAtual - idade;
+            return anoAtual - idade;
+        }
+
+        //calcularNascimento(2025, 17);
+
+        escreverln("Eu nasci em: " + calcularNascimento(2025, 17));
+
+        //IMC = peso /(altura * altura)
+
+        function calcularIMC(peso,altura){
+            return peso/(altura*altura);
+        }
+        escreverln("Meu IMC é: " + calcularIMC (65, 1.66));
+
+        function calcularImc(peso, altura){
+            return(peso/(altura*altura)).toFixed(0);
+        }
+        let weight = 65
+        let height = 1.66
+
+        let imc = calcularImc(peso = weight, altura = height);
+
+        console.log("Meu IMC é: " + imc);
+        escreverln("Meu IMC é: " + calcularImc(65, 1.66));
+
+        //recapitulando
+
+        let v; //declarei
+
+        v = "Frase" + 2; //inicializei
+        v = "Frase" + (10 * 3) + 8.34/14; //reatribui
+
+        let x = v; //usando
+
+        // constante
+        const k = "Tenho sono depois do almoço."; //declarando e inicializando
+        //k = "Preciso de um cafézinho pra acordar." Não é possível
+        //reinicializar uma constante.
+
+        //Função
+
+        function nome(parametro){ //declarando a função e o(s)
+                                 //parâmentros, se houver.
+                //meu código
+                //criar variável
+                //criar constante
+                //chamar funções
+                //reatribuir valores a variáveis
+                //retornar um valor
+
+        }
+        let argumento = "argumento"
+        nome(parametro = argumento);
+
+        let retorno = nome();
+
+        escreverln(retorno);
+
+        let minhaFuncao = function (p1, p2){ //função anônima
+            return p1 + p2;
+        }
+        escreverln(minhaFuncao(1, 1));
+
+        let name = prompt("Boa tarde, qual é o seu nome?");
+        escreverln("Bem vinda, " + name );
+        let idade = prompt( "Quantos anos você tem ?");
+        escreverln("Você tem " + idade  + " anos.");
+        //let peso2 = prompt("Quanto você pesa ?");
+        //let altura2 = prompt("Qual sua altura ?");
+        //escreverln(name + ", seu IMC é: " + calcularIMC(peso, altura));
+
+        let dias = function(idade){
+            return idade * 365;
+
+        }
+        escreverln("Você já viveu " + dias(idade) + " dias.");
+
+        let litros = function(idade){
+            return idade * 365 * 1.5;
+        }
+        escreverln("Você já tomou " + litros(idade) + " litros de água.");
+
+        let despesas = function(idade){
+            return idade * 365 * 20;
+        }
+        escreverln("Você já custou " + despesas(idade) + " reais para sua mãe.");
+
+        let horasCelular = function(idade){
+            return (idade - 6) * 4 * 365;
+        }
+        escreverln("Você já usou o celular por " + horasCelular(idade) + " horas.")
+        </script>
+</body>
+</html>
