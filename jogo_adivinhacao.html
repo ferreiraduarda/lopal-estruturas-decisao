@@ -8,16 +8,15 @@
 <body>
     <h1>Tente Adivinhar o Número</h1>
     <script>
-        prompt("Olá, eu pensei em um número de 1 a 10, tente adivinhar qual eu pensei");
         let numeroAleatorio = Math.random()*10;
         let numeroAleatorioInteiro = Math.round(numeroAleatorio)
         document.write("O número é: " + numeroAleatorioInteiro + ".");
 
-        let numero = prompt("Olá, eu pensei em um número de 1 a 10, tente adivinhar qual eu pensei");
-        if(numero= numeroAleatorioInteiro){
-            docment.write("Parabéns! Você ganhou!");
-        }else if(numero){
-            document.write("Não foi dessa vez, você errou!");
+        let numero = prompt("Olá, eu pensei em um número de 1 a 10, tente adivinhar qual eu pensei ");
+        if(numero == numeroAleatorioInteiro){
+            docment.write(" Parabéns! Você ganhou!");
+        }else if (numero){
+            document.write(" Não foi dessa vez, você errou!");
         }
     </script>
 </body>
