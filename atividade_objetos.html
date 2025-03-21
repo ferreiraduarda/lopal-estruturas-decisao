@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Objetos</title>
+</head>
+<body>
+    <button onclick="cadastrarAluno()">Adicionar Aluno</button>
+    <button onclick="removerAluno()">Remover Último Aluno</button>
+
+    <output id="listaAlunos"></output>
+
+    <script>
+        // Atividade: Objetos
+        // Crie um programa que solicite ao usuário os dados dos alunos (nome, idade, sesi e se possui pet ou não).
+        // O programa deve perguntar ao usuário se ele deseja continuar cadastrando alunos. 
+        // Os dados dos alunos devem ser organizados em um array ou mapa de objetos como na demonstração 
+        // (você pode começar com um array vazio, sem alunos cadastrados).
+        // Utilize um botão para executar a ação de cadastrar alunos. 
+        // Essa ação deve ser executada mais de uma vez para acrescentar outros alunos, se o usuário desejar.
+        // O usuário deve ser capaz de remover os dados do último aluno cadastrado, se desejar.
+        // Utilize uma tag <output> para exibir os dados cadastrados.
+
+        let alunos = [];
+
+        function imprimirAlunos(){
+            document.querySelector('output').innerHTML = '<h1> Lista de Alunos</h1>';
+
+            for(let indice = 0; indice < alunos.length; indice++){
+                document.querySelector('output').innerHTML += alunos[indice] + '<br>';
+            }
+        }
+
+        function cadastrarAluno(){
+
+        
+        let nome = prompt("Digite o nome do(a) aluno(a): ")
+        let idade = prompt("Digite a idade do(a) aluno(a): ")
+        let sesi = prompt("Digite o SESI do(a) aluno(a): ")
+        let pet = prompt("O(a) aluno(a) tem pet? (sim/não)").toLowerCase() === "sim";
+        
+         alunos.push(nome + " | " + idade + " anos " + ' |' + "estuda no SESI" + sesi + " | " + "Tem um pet?" + pet);
+
+        opcaoUsuario = confirm('Deseja adicionar mais um aluno?')
+
+        while(opcaoUsuario) {
+            cadastrarAluno();
+        }
+
+        imprimirAlunos();
+        
+    }
+        function removerAluno() {
+            if (alunos.length > 0) {
+                alunos.pop();
+                imprimirAlunos();
+            } else {
+                alert("Nenhum aluno cadastrado para remover.");
+            }
+        }
+
+        imprimirAlunos();
+
+
+    </script>
+</body>
+</html>
