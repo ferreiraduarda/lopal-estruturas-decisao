@@ -7,8 +7,10 @@
 </head>
 <body>
     <script>
-        let dataDeHoje = new Date().getDay();
+        const dataDeHoje = new Date().getDay();
 
+        document.write('<h1> Com If-ElseIf-Else</h1>')
+        
         if(dataDeHoje == 0){
             document.write("Hoje é domingo. ");
         }else if(dataDeHoje == 1){
@@ -26,9 +28,10 @@
             }else{
                 document.write("Hoje não é um dia da semana. ");
             }
-        document.write(dataDeHoje);
+        //document.write(dataDeHoje);
 
-        
+        document.write('<h1> Com Switchcase</h1>')
+
         switch(dataDeHoje){
             case 0:
                 document.write("Hoje é domingo.");
@@ -52,8 +55,9 @@
                 document.write("Hoje é sábado. ");
             break;
         }
-        document.write(dataDeHoje);
+        //document.write(dataDeHoje);
 
+        document.write('<h1> Com operador ternário </h1>')
         let diaDaSemana = (dataDeHoje == 0) ? "domingo":
                           (dataDeHoje == 1) ? "segunda-feira":
                           (dataDeHoje == 2) ? "terça-feira":
@@ -62,7 +66,27 @@
                           (dataDeHoje == 5) ? "sexta-feira":
                           (dataDeHoje == 6) ? "sábado":
                           "Dia da semana inválido";
-        document.write(" Hoje é " + diaDaSemana + ".");
+        document.write("<p> Hoje é " + diaDaSemana + ".</p>");
+
+        //Usando um array
+        //Programação declarativa
+
+        document.write('<h1> Com Map</h1>')
+        const mapaDeDias = new Map([
+            [0, 'domingo'],
+            [1, 'segunda-feira'],
+            [2, 'terça-feira'],
+            [3, 'quarta-feira'],
+            [4, 'quinta-feira'],
+            [5, 'sexta-feira'],
+            [6, 'sábado'],
+        ]);
+        document.write('<p> Hoje é ' + mapaDeDias.get(dataDeHoje) + '.</p>')
+
+        document.write('<h1> Com um array</h1>')
+        const diasDaSemana = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
+
+        document.write('<p> Hoje é ' + diasDaSemana[dataDeHoje] + '.</p>')
     </script>
 </body>
 </html>
